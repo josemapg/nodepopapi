@@ -1,0 +1,79 @@
+{
+  "name": "nodepop",
+  "version": "1.0.0",
+  "description": "Nodepop",
+  "main": "src/index.js",
+  "scripts": {
+    "startDB": "echo \"Remember!!! This script will only work on Mac!!!! Manage by your mongodb server by your own in other OSs\" && echo \"Config at /usr/local/etc/mongod.conf\" && brew services start mongodb",
+    "stopDB": "echo \"Remember!!! This script will only work on Mac!!!! Manage by your mongodb server by your own in other OSs\" && brew services stop mongodb",
+    "statusDB": "echo \"Remember!!! This script will only work on Mac!!!! Manage by your mongodb server by your own in other OSs\" && brew services list mongodb",
+    "installDB": "cross-env NODE_PATH=src:data node bin/install-db.js",
+    "checks": "yarn audit && standard | snazzy",
+    "clean": "node scripts/cross-rm.js -rf node_modules docs logs/* logs/.*audit*",
+    "cleanDocs": "node scripts/cross-rm.js -rf docs",
+    "cleanLogs": "node scripts/cross-rm.js -rf logs/* logs/.*audit*",
+    "postinstall": "cd scripts && yarn install && cd -",
+    "production": "yarn audit && cross-env NODE_PATH=src NODE_ENV=prod node src/index.js",
+    "reinstall": "node scripts/cross-rm.js -rf node_modules && yarn install && yarn audit",
+    "start": "cross-env NODE_PATH=src nodemon src/index.js",
+    "standard": "standard | snazzy",
+    "standard-fix": "standard --fix | snazzy",
+    "jsdoc": "node scripts/cross-rm.js -rf docs && mkdir docs && jsdoc src -d docs"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "author": "José M. Puche <josemapuche@gmail.com>",
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "basic-auth": "^2.0.1",
+    "bcrypt": "^3.0.2",
+    "body-parser": "^1.18.3",
+    "chalk": "^2.4.1",
+    "cookie-parser": "^1.4.3",
+    "csurf": "^1.9.0",
+    "express": "^4.16.4",
+    "express-validator": "^5.3.0",
+    "helmet": "^3.15.0",
+    "i18n": "^0.8.3",
+    "jsonwebtoken": "^8.4.0",
+    "mongodb": "^3.1.10",
+    "mongoose": "^5.4.0",
+    "morgan": "^1.9.1",
+    "pre-commit": "^1.2.2",
+    "snazzy": "^8.0.0",
+    "validator": "^10.9.0",
+    "winston": "^3.1.0",
+    "winston-daily-rotate-file": "^3.5.1"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "cross-env": "^5.2.0",
+    "eslint": "^5.10.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.0",
+    "jsdoc": "^3.5.5",
+    "nodemon": "^1.18.9",
+    "shelljs": "^0.8.3",
+    "standard": "^12.0.1"
+  },
+  "pre-commit": [
+    "checks"
+  ],
+  "standard": {
+    "ignore": [
+      "logs",
+      "*.log",
+      "npm-debug.log*",
+      "yarn-debug.log*",
+      "yarn-error.log*",
+      "yarn.lock*",
+      "webpack.config.js",
+      "dist",
+      "docs"
+    ]
+  },
+  "license": "MIT"
+}

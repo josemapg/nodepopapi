@@ -1,0 +1,21 @@
+{
+  "adds": [{
+    "name": "Bicicleta",
+    "onsale": true,
+    "price": 230.15,
+    "photo": "images/adds/bici.jpg",
+    "tags": ["lifestyle", "motor"]
+  }, {
+    "name": "iPhone 3GS",
+    "onsale": false,
+    "price": 50.00,
+    "photo": "images/adds/iphone.png",
+    "tags": ["lifestyle", "mobile"]
+  }],
+  "users": [{
+    "name": "Test",
+    "email": "test@example.com",
+    "passwd": "$2a$12$2oVD0af4Vt1sEWPDDwC8XedgLcFyofpWiY9mMe6HrR3o0visjNZXu"
+  }]
+
+}

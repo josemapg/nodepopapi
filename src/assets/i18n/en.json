@@ -1,0 +1,21 @@
+{
+	"keyUserName" : "Name",
+	"keyUserEmail" : "Email",
+	"keyUserPasswd" :"Password",
+	"keyAdsOnSale" : "On sale",
+	"keyAdsOnPrice": "Price",
+	"keyAdsOnPriceLow": "priceLow (Low Value of Price)",
+	"keyAdsOnPriceHigh": "priceHigh (High Value of Price)",
+	"keyAdsOnPriceOp": "priceOp",
+	"msgErrorNoDbConnection": "Error: Not able to connect to the database",
+	"msgErrorNoDbConnectionAfterRetry": "Error: Not able to connect to the database after retry the connection",
+	"msgErrorUnknownError": "Error: Unknown",
+	"msgErrorObjMissingDataError": "Error: Required {{field}} is missing",
+	"msgErrorObjTooShortDataError": "Error: {{field}} is too short. Minimum lenth allowed {{minLength}}",
+	"msgErrorObjNotValidDataError": "Error: {{field}} is not valid",
+	"msgErrorAdsFindError": "Error: Find not working using query={{query}}",
+	"msgErrorUserRegistrationError": "Error: Not able to register the user with email {{email}}",
+	"msgErrorUserRegistrationDuplicateEmailError": "Error: {{email}} email is already registered",
+	"msgErrorUserMissingDataError": "Error: Required {{paramName}} is missing"
+
+}

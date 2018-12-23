@@ -1,0 +1,20 @@
+{
+	"keyUserName": "nombre",
+	"keyUserEmail": "email",
+	"keyUserPasswd": "contraseña",
+	"keyAdsOnsale": "en venta",
+	"keyAdsPrice": "precio",
+	"keyAdsPriceLow": "priceLow (el límite inferior para el campo precio)",
+	"keyAdsPriceHigh": "priceHigh (el límite superior para el campo precio)",
+	"keyAdsPriceOp": "priceOp",
+	"msgErrorNoDbConnection": "Error: No ha sido posible conectar a la BBDD",
+	"msgErrorNoDbConnectionAfterRetry": "Error: No ha sido posible connectar con la DB después de tratar de reconectar",
+	"msgErrorUnknownError": "Error: Desconocido",
+	"msgErrorObjMissingDataError": "Error: El campo obligatorio {{field}} no se encuentra",
+	"msgErrorObjTooShortDataError": "Error: El campo {{field}} tiene una longitud no válida. La longitud mínima permitida es {{minLength}}",
+	"msgErrorObjNotValidDataError": "Error: El campo {{field}} no es válido",
+	"msgErrorAdsFindError": "Error: No se ha podido recuperar anuncios utilizando la consulta {{query}}",
+	"msgErrorUserRegistrationError": "Error: No se ha podido registrar al usuario con email {{email}}",
+	"msgErrorUserRegistrationDuplicateEmailError": "Error: El email {{email}} ya está registrado",
+	"msgErrorUserMissingDataError": "Error: El parámetro {{paramName}} obligatorio no se ha encontrado"
+}

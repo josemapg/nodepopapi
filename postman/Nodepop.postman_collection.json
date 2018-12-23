@@ -1,0 +1,1505 @@
+{
+	"info": {
+		"_postman_id": "4c8b494b-c1ef-4590-91bc-56b5d6b1dfae",
+		"name": "Nodepop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST Users register - OK",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "es",
+						"description": "Language selection\n",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": "JSON format",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"data\": {\n\t\t\"name\": \"Pepe\",\n\t\t\"email\": \"a@example.com\",\n\t\t\"passwd\": \"test01\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"register"
+					]
+				},
+				"description": "Register user operation"
+			},
+			"response": []
+		},
+		{
+			"name": "POST Missing name - Failed",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"description": "Language selection\n",
+						"key": "Accept-Language",
+						"type": "text",
+						"value": "es"
+					},
+					{
+						"description": "JSON format",
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"data\": {\n\t\t\"name\":\"\",\n\t\t\"email\": \"a@example.com\",\n\t\t\"passwd\": \"test01\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"register"
+					]
+				},
+				"description": "Register user operation"
+			},
+			"response": []
+		},
+		{
+			"name": "POST Missing email - Failed",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"description": "Language selection\n",
+						"key": "Accept-Language",
+						"type": "text",
+						"value": "es"
+					},
+					{
+						"description": "JSON format",
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"data\": {\n\t\t\"name\": \"Pepe\",\n\t\t\"email\": \"\",\n\t\t\"passwd\": \"test01\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"register"
+					]
+				},
+				"description": "Register user operation"
+			},
+			"response": []
+		},
+		{
+			"name": "POST Not Valid email - Failed",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"description": "Language selection\n",
+						"key": "Accept-Language",
+						"type": "text",
+						"value": "es"
+					},
+					{
+						"description": "JSON format",
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"data\": {\n\t\t\"name\": \"Pepe\",\n\t\t\"email\": \"a#example.com\",\n\t\t\"passwd\": \"test01\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"register"
+					]
+				},
+				"description": "Register user operation"
+			},
+			"response": []
+		},
+		{
+			"name": "POST Missing passwd - Failed",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"description": "Language selection\n",
+						"key": "Accept-Language",
+						"type": "text",
+						"value": "es"
+					},
+					{
+						"description": "JSON format",
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"data\": {\n\t\t\"name\": \"Pepe\",\n\t\t\"email\": \"a@example.com\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"register"
+					]
+				},
+				"description": "Register user operation"
+			},
+			"response": []
+		},
+		{
+			"name": "POST Too short passwd - Failed",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"description": "Language selection\n",
+						"key": "Accept-Language",
+						"type": "text",
+						"value": "es"
+					},
+					{
+						"description": "JSON format",
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"data\": {\n\t\t\"name\": \"Pepe\",\n\t\t\"email\": \"a@example.com\",\n\t\t\"passwd\": \"te\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"register"
+					]
+				},
+				"description": "Register user operation"
+			},
+			"response": []
+		},
+		{
+			"name": "POST Duplicate email - Failed",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"description": "Language selection\n",
+						"key": "Accept-Language",
+						"type": "text",
+						"value": "es"
+					},
+					{
+						"description": "JSON format",
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"data\": {\n\t\t\"name\": \"Pepe\",\n\t\t\"email\": \"josemapuche@gmail.com\",\n\t\t\"passwd\": \"test01\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"register"
+					]
+				},
+				"description": "Register user operation"
+			},
+			"response": []
+		},
+		{
+			"name": "GET Auth - OK",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "a@example.com",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "test01",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"description": "Language selection",
+						"key": "Accept-Language",
+						"type": "text",
+						"value": "es"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/auth/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Email empty Failed",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "test01",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"description": "Language selection",
+						"key": "Accept-Language",
+						"type": "text",
+						"value": "es"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/auth/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Email with wildcard Failed",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "a*example.com",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "test01",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"description": "Language selection",
+						"key": "Accept-Language",
+						"type": "text",
+						"value": "es"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/auth/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Invalid password Failed",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "test02",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "a@example.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"description": "Language selection",
+						"key": "Accept-Language",
+						"type": "text",
+						"value": "es"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/auth/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Ads - OK",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "es",
+						"description": "Language selection",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/ads?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNTQ1NTgxODI3LCJleHAiOjE1NTQyMjE4Mjd9.1Rgl3KbEMG85czdss0vNWkxyKWH5ajpzgFbzmT1WyEk",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"ads"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNTQ1NTgxODI3LCJleHAiOjE1NTQyMjE4Mjd9.1Rgl3KbEMG85czdss0vNWkxyKWH5ajpzgFbzmT1WyEk"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Auth ExpireToken - Failed",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"description": "Language selection",
+						"key": "Accept-Language",
+						"type": "text",
+						"value": "es"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/ads?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNTQ1NTgxOTk1LCJleHAiOjE1NDU1ODIwNTV9.Q51UTdtizqTmLL9BDmMowtUyid3vqfdE1BGCI7_eQpM",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"ads"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNTQ1NTgxOTk1LCJleHAiOjE1NDU1ODIwNTV9.Q51UTdtizqTmLL9BDmMowtUyid3vqfdE1BGCI7_eQpM"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Auth No Token - Failed",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "es",
+						"description": "Language selection",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/ads",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"ads"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Auth Token Empty - Failed",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"description": "Language selection",
+						"key": "Accept-Language",
+						"type": "text",
+						"value": "es"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/ads?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNTQ1NTgwOTAxLCJleHAiOjE1NDU1ODA5NjF9.ggejonGjfwZ9_E0hHJxSMsJ-_cCijNfbjM5QsFFe8ag",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"ads"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNTQ1NTgwOTAxLCJleHAiOjE1NDU1ODA5NjF9.ggejonGjfwZ9_E0hHJxSMsJ-_cCijNfbjM5QsFFe8ag"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Ads - skip=0 & top=1 OK",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"description": "Language selection",
+						"key": "Accept-Language",
+						"type": "text",
+						"value": "es"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/ads?skip=0&top=1&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNTQ1NTgxODI3LCJleHAiOjE1NTQyMjE4Mjd9.1Rgl3KbEMG85czdss0vNWkxyKWH5ajpzgFbzmT1WyEk",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"ads"
+					],
+					"query": [
+						{
+							"key": "skip",
+							"value": "0"
+						},
+						{
+							"key": "top",
+							"value": "1"
+						},
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNTQ1NTgxODI3LCJleHAiOjE1NTQyMjE4Mjd9.1Rgl3KbEMG85czdss0vNWkxyKWH5ajpzgFbzmT1WyEk"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Ads - skip not valid Failed",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"description": "Language selection",
+						"key": "Accept-Language",
+						"type": "text",
+						"value": "es"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/ads?skip=&top=1&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNTQ1NTgxODI3LCJleHAiOjE1NTQyMjE4Mjd9.1Rgl3KbEMG85czdss0vNWkxyKWH5ajpzgFbzmT1WyEk",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"ads"
+					],
+					"query": [
+						{
+							"key": "skip",
+							"value": ""
+						},
+						{
+							"key": "top",
+							"value": "1"
+						},
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNTQ1NTgxODI3LCJleHAiOjE1NTQyMjE4Mjd9.1Rgl3KbEMG85czdss0vNWkxyKWH5ajpzgFbzmT1WyEk"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Ads -top not valid Failed",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"description": "Language selection",
+						"key": "Accept-Language",
+						"type": "text",
+						"value": "es"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/ads?skip=0&top=bbb&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNTQ1NTgxODI3LCJleHAiOjE1NTQyMjE4Mjd9.1Rgl3KbEMG85czdss0vNWkxyKWH5ajpzgFbzmT1WyEk",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"ads"
+					],
+					"query": [
+						{
+							"key": "skip",
+							"value": "0"
+						},
+						{
+							"key": "top",
+							"value": "bbb"
+						},
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNTQ1NTgxODI3LCJleHAiOjE1NTQyMjE4Mjd9.1Rgl3KbEMG85czdss0vNWkxyKWH5ajpzgFbzmT1WyEk"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Ads -  onsale OK",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"description": "Language selection",
+						"key": "Accept-Language",
+						"type": "text",
+						"value": "es"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/ads?skip=0&top=2&onsale=true&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNTQ1NTgxODI3LCJleHAiOjE1NTQyMjE4Mjd9.1Rgl3KbEMG85czdss0vNWkxyKWH5ajpzgFbzmT1WyEk",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"ads"
+					],
+					"query": [
+						{
+							"key": "skip",
+							"value": "0"
+						},
+						{
+							"key": "top",
+							"value": "2"
+						},
+						{
+							"key": "onsale",
+							"value": "true"
+						},
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNTQ1NTgxODI3LCJleHAiOjE1NTQyMjE4Mjd9.1Rgl3KbEMG85czdss0vNWkxyKWH5ajpzgFbzmT1WyEk"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Ads -  onsale Failed",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"description": "Language selection",
+						"key": "Accept-Language",
+						"type": "text",
+						"value": "es"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/ads?skip=0&top=1&onsale=a&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNTQ1NTgxODI3LCJleHAiOjE1NTQyMjE4Mjd9.1Rgl3KbEMG85czdss0vNWkxyKWH5ajpzgFbzmT1WyEk",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"ads"
+					],
+					"query": [
+						{
+							"key": "skip",
+							"value": "0"
+						},
+						{
+							"key": "top",
+							"value": "1"
+						},
+						{
+							"key": "onsale",
+							"value": "a"
+						},
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNTQ1NTgxODI3LCJleHAiOjE1NTQyMjE4Mjd9.1Rgl3KbEMG85czdss0vNWkxyKWH5ajpzgFbzmT1WyEk"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Ads -  sort OK",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"description": "Language selection",
+						"key": "Accept-Language",
+						"type": "text",
+						"value": "es"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/ads?skip=0&top=2&sort=price&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNTQ1NTgxODI3LCJleHAiOjE1NTQyMjE4Mjd9.1Rgl3KbEMG85czdss0vNWkxyKWH5ajpzgFbzmT1WyEk",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"ads"
+					],
+					"query": [
+						{
+							"key": "skip",
+							"value": "0"
+						},
+						{
+							"key": "top",
+							"value": "2"
+						},
+						{
+							"key": "sort",
+							"value": "price"
+						},
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNTQ1NTgxODI3LCJleHAiOjE1NTQyMjE4Mjd9.1Rgl3KbEMG85czdss0vNWkxyKWH5ajpzgFbzmT1WyEk"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Ads -  sort && sortDir OK",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"description": "Language selection",
+						"key": "Accept-Language",
+						"type": "text",
+						"value": "es"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/ads?skip=0&top=2&sort=price&sortDir=desc&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNTQ1NTgxODI3LCJleHAiOjE1NTQyMjE4Mjd9.1Rgl3KbEMG85czdss0vNWkxyKWH5ajpzgFbzmT1WyEk",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"ads"
+					],
+					"query": [
+						{
+							"key": "skip",
+							"value": "0"
+						},
+						{
+							"key": "top",
+							"value": "2"
+						},
+						{
+							"key": "sort",
+							"value": "price"
+						},
+						{
+							"key": "sortDir",
+							"value": "desc"
+						},
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNTQ1NTgxODI3LCJleHAiOjE1NTQyMjE4Mjd9.1Rgl3KbEMG85czdss0vNWkxyKWH5ajpzgFbzmT1WyEk"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Ads -  sort Failed",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"description": "Language selection",
+						"key": "Accept-Language",
+						"type": "text",
+						"value": "es"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/ads?skip=0&top=2&sort=name1&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNTQ1NTgxODI3LCJleHAiOjE1NTQyMjE4Mjd9.1Rgl3KbEMG85czdss0vNWkxyKWH5ajpzgFbzmT1WyEk",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"ads"
+					],
+					"query": [
+						{
+							"key": "skip",
+							"value": "0"
+						},
+						{
+							"key": "top",
+							"value": "2"
+						},
+						{
+							"key": "sort",
+							"value": "name1"
+						},
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNTQ1NTgxODI3LCJleHAiOjE1NTQyMjE4Mjd9.1Rgl3KbEMG85czdss0vNWkxyKWH5ajpzgFbzmT1WyEk"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Ads -  sortDir Failed",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"description": "Language selection",
+						"key": "Accept-Language",
+						"type": "text",
+						"value": "es"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/ads?skip=0&top=2&sortDir=asc1&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNTQ1NTgxODI3LCJleHAiOjE1NTQyMjE4Mjd9.1Rgl3KbEMG85czdss0vNWkxyKWH5ajpzgFbzmT1WyEk",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"ads"
+					],
+					"query": [
+						{
+							"key": "skip",
+							"value": "0"
+						},
+						{
+							"key": "top",
+							"value": "2"
+						},
+						{
+							"key": "sortDir",
+							"value": "asc1"
+						},
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNTQ1NTgxODI3LCJleHAiOjE1NTQyMjE4Mjd9.1Rgl3KbEMG85czdss0vNWkxyKWH5ajpzgFbzmT1WyEk"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Ads -  price < XXX OK",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"description": "Language selection",
+						"key": "Accept-Language",
+						"type": "text",
+						"value": "es"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/ads?skip=0&top=2&priceOp=lt&price=230.15&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNTQ1NTgxODI3LCJleHAiOjE1NTQyMjE4Mjd9.1Rgl3KbEMG85czdss0vNWkxyKWH5ajpzgFbzmT1WyEk",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"ads"
+					],
+					"query": [
+						{
+							"key": "skip",
+							"value": "0"
+						},
+						{
+							"key": "top",
+							"value": "2"
+						},
+						{
+							"key": "priceOp",
+							"value": "lt"
+						},
+						{
+							"key": "price",
+							"value": "230.15"
+						},
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNTQ1NTgxODI3LCJleHAiOjE1NTQyMjE4Mjd9.1Rgl3KbEMG85czdss0vNWkxyKWH5ajpzgFbzmT1WyEk"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Ads -  price <= XXX OK",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"description": "Language selection",
+						"key": "Accept-Language",
+						"type": "text",
+						"value": "es"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/ads?skip=0&top=2&priceOp=lte&price=230.15&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNTQ1NTgxODI3LCJleHAiOjE1NTQyMjE4Mjd9.1Rgl3KbEMG85czdss0vNWkxyKWH5ajpzgFbzmT1WyEk",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"ads"
+					],
+					"query": [
+						{
+							"key": "skip",
+							"value": "0"
+						},
+						{
+							"key": "top",
+							"value": "2"
+						},
+						{
+							"key": "priceOp",
+							"value": "lte"
+						},
+						{
+							"key": "price",
+							"value": "230.15"
+						},
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNTQ1NTgxODI3LCJleHAiOjE1NTQyMjE4Mjd9.1Rgl3KbEMG85czdss0vNWkxyKWH5ajpzgFbzmT1WyEk"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Ads -  price > XXX OK",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"description": "Language selection",
+						"key": "Accept-Language",
+						"type": "text",
+						"value": "es"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/ads?skip=0&top=2&price=50&priceOp=gt&sort=price&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNTQ1NTgxODI3LCJleHAiOjE1NTQyMjE4Mjd9.1Rgl3KbEMG85czdss0vNWkxyKWH5ajpzgFbzmT1WyEk",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"ads"
+					],
+					"query": [
+						{
+							"key": "skip",
+							"value": "0"
+						},
+						{
+							"key": "top",
+							"value": "2"
+						},
+						{
+							"key": "price",
+							"value": "50"
+						},
+						{
+							"key": "priceOp",
+							"value": "gt"
+						},
+						{
+							"key": "sort",
+							"value": "price"
+						},
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNTQ1NTgxODI3LCJleHAiOjE1NTQyMjE4Mjd9.1Rgl3KbEMG85czdss0vNWkxyKWH5ajpzgFbzmT1WyEk"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Ads -  price >= XXX OK",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"description": "Language selection",
+						"key": "Accept-Language",
+						"type": "text",
+						"value": "es"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/ads?skip=0&top=2&price=50&priceOp=gte&sort=price&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNTQ1NTgxODI3LCJleHAiOjE1NTQyMjE4Mjd9.1Rgl3KbEMG85czdss0vNWkxyKWH5ajpzgFbzmT1WyEk",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"ads"
+					],
+					"query": [
+						{
+							"key": "skip",
+							"value": "0"
+						},
+						{
+							"key": "top",
+							"value": "2"
+						},
+						{
+							"key": "price",
+							"value": "50"
+						},
+						{
+							"key": "priceOp",
+							"value": "gte"
+						},
+						{
+							"key": "sort",
+							"value": "price"
+						},
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNTQ1NTgxODI3LCJleHAiOjE1NTQyMjE4Mjd9.1Rgl3KbEMG85czdss0vNWkxyKWH5ajpzgFbzmT1WyEk"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Ads -  price between OK",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"description": "Language selection",
+						"key": "Accept-Language",
+						"type": "text",
+						"value": "es"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/ads?skip=0&top=2&priceLow=50&priceHigh=230&priceOp=between&sort=price&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNTQ1NTgxODI3LCJleHAiOjE1NTQyMjE4Mjd9.1Rgl3KbEMG85czdss0vNWkxyKWH5ajpzgFbzmT1WyEk",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"ads"
+					],
+					"query": [
+						{
+							"key": "skip",
+							"value": "0"
+						},
+						{
+							"key": "top",
+							"value": "2"
+						},
+						{
+							"key": "priceLow",
+							"value": "50"
+						},
+						{
+							"key": "priceHigh",
+							"value": "230"
+						},
+						{
+							"key": "priceOp",
+							"value": "between"
+						},
+						{
+							"key": "sort",
+							"value": "price"
+						},
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNTQ1NTgxODI3LCJleHAiOjE1NTQyMjE4Mjd9.1Rgl3KbEMG85czdss0vNWkxyKWH5ajpzgFbzmT1WyEk"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Ads -  priceLow Failed",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"description": "Language selection",
+						"key": "Accept-Language",
+						"type": "text",
+						"value": "es"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/ads?skip=0&top=2&priceLow=a&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNTQ1NTgxODI3LCJleHAiOjE1NTQyMjE4Mjd9.1Rgl3KbEMG85czdss0vNWkxyKWH5ajpzgFbzmT1WyEk",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"ads"
+					],
+					"query": [
+						{
+							"key": "skip",
+							"value": "0"
+						},
+						{
+							"key": "top",
+							"value": "2"
+						},
+						{
+							"key": "priceLow",
+							"value": "a"
+						},
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNTQ1NTgxODI3LCJleHAiOjE1NTQyMjE4Mjd9.1Rgl3KbEMG85czdss0vNWkxyKWH5ajpzgFbzmT1WyEk"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Ads -  priceHigh Failed",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"description": "Language selection",
+						"key": "Accept-Language",
+						"type": "text",
+						"value": "es"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/ads?skip=0&top=2&priceHigh=a&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNTQ1NTgxODI3LCJleHAiOjE1NTQyMjE4Mjd9.1Rgl3KbEMG85czdss0vNWkxyKWH5ajpzgFbzmT1WyEk",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"ads"
+					],
+					"query": [
+						{
+							"key": "skip",
+							"value": "0"
+						},
+						{
+							"key": "top",
+							"value": "2"
+						},
+						{
+							"key": "priceHigh",
+							"value": "a"
+						},
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNTQ1NTgxODI3LCJleHAiOjE1NTQyMjE4Mjd9.1Rgl3KbEMG85czdss0vNWkxyKWH5ajpzgFbzmT1WyEk"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Ads -  priceOp Failed",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"description": "Language selection",
+						"key": "Accept-Language",
+						"type": "text",
+						"value": "es"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/ads?skip=0&top=2&priceOp=a&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNTQ1NTgxODI3LCJleHAiOjE1NTQyMjE4Mjd9.1Rgl3KbEMG85czdss0vNWkxyKWH5ajpzgFbzmT1WyEk",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"ads"
+					],
+					"query": [
+						{
+							"key": "skip",
+							"value": "0"
+						},
+						{
+							"key": "top",
+							"value": "2"
+						},
+						{
+							"key": "priceOp",
+							"value": "a"
+						},
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNTQ1NTgxODI3LCJleHAiOjE1NTQyMjE4Mjd9.1Rgl3KbEMG85czdss0vNWkxyKWH5ajpzgFbzmT1WyEk"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
