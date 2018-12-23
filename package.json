@@ -21,7 +21,7 @@
     "jsdoc": "node scripts/cross-rm.js -rf docs && mkdir docs && jsdoc src -d docs"
   },
   "engines": {
-    "node": ">=6"
+    "node": ">=8"
   },
   "author": "José M. Puche <josemapuche@gmail.com>",
   "dependencies": {
