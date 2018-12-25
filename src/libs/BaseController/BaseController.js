@@ -29,15 +29,10 @@ class BaseController {
     return resultConfig
   }
 
-  _getNumericFilter (value, valueLow, valueHigh, operator) {
+  _getFilter ({ value, valueLow, valueHigh, operator }) {
     let filterOn = false
     let filter
     let operatorFilter
-
-    logger.warn(value)
-    logger.warn(valueLow)
-    logger.warn(valueHigh)
-    logger.warn(operator)
 
     if (value) {
       // Give priority single operator if value exists

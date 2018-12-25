@@ -516,6 +516,45 @@
 			"response": []
 		},
 		{
+			"name": "GET Tags - OK",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"description": "Language selection",
+						"key": "Accept-Language",
+						"type": "text",
+						"value": "es"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/ads/tags?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNTQ1NTgxODI3LCJleHAiOjE1NTQyMjE4Mjd9.1Rgl3KbEMG85czdss0vNWkxyKWH5ajpzgFbzmT1WyEk",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"ads",
+						"tags"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNTQ1NTgxODI3LCJleHAiOjE1NTQyMjE4Mjd9.1Rgl3KbEMG85czdss0vNWkxyKWH5ajpzgFbzmT1WyEk"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "GET Auth ExpireToken - Failed",
 			"request": {
 				"method": "GET",
@@ -1491,6 +1530,106 @@
 						{
 							"key": "priceOp",
 							"value": "a"
+						},
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNTQ1NTgxODI3LCJleHAiOjE1NTQyMjE4Mjd9.1Rgl3KbEMG85czdss0vNWkxyKWH5ajpzgFbzmT1WyEk"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Ads -  tag OK",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"description": "Language selection",
+						"key": "Accept-Language",
+						"type": "text",
+						"value": "es"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/ads?skip=0&top=2&tags=mobile&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNTQ1NTgxODI3LCJleHAiOjE1NTQyMjE4Mjd9.1Rgl3KbEMG85czdss0vNWkxyKWH5ajpzgFbzmT1WyEk",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"ads"
+					],
+					"query": [
+						{
+							"key": "skip",
+							"value": "0"
+						},
+						{
+							"key": "top",
+							"value": "2"
+						},
+						{
+							"key": "tags",
+							"value": "mobile"
+						},
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNTQ1NTgxODI3LCJleHAiOjE1NTQyMjE4Mjd9.1Rgl3KbEMG85czdss0vNWkxyKWH5ajpzgFbzmT1WyEk"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Ads -  name OK",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"description": "Language selection",
+						"key": "Accept-Language",
+						"type": "text",
+						"value": "es"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/ads?skip=0&top=2&name=iphone&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNTQ1NTgxODI3LCJleHAiOjE1NTQyMjE4Mjd9.1Rgl3KbEMG85czdss0vNWkxyKWH5ajpzgFbzmT1WyEk",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"ads"
+					],
+					"query": [
+						{
+							"key": "skip",
+							"value": "0"
+						},
+						{
+							"key": "top",
+							"value": "2"
+						},
+						{
+							"key": "name",
+							"value": "iphone"
 						},
 						{
 							"key": "token",

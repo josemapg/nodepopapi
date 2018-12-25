@@ -85,6 +85,34 @@ class AdsProtectedRoutes extends BaseRouter {
 
         logger.debug(`Finishing ${this.constructor.name} ${req.baseUrl}`)
       })
+
+    this.routes.route('/tags').all(
+      async (req, res, next) => {
+        logger.debug(`Beginning ${this.constructor.name} ${req.baseUrl}`)
+
+        try {
+          switch (req.method) {
+            case 'GET':
+              logger.debug(`Beginning ${this.constructor.name}[${req.method}] ${req.baseUrl}`)
+              // Ejecutar la búsqueda
+              const tags = await adsController.findTags(req, res)
+              res.json(tags)
+              logger.debug(`Finishing ${this.constructor.name}[${req.method}] ${req.baseUrl}`)
+              break
+            default:
+              const newNotImplementedError = new RouteNotImplementedError({
+                message: `Not implemented method ${req.route.method} for ${req.baseUrl} route`,
+                internalErrorStatus: errorCodes.notImplemented
+              })
+              next(newNotImplementedError)
+              break
+          }
+        } catch (err) {
+          next(err)
+        }
+
+        logger.debug(`Finishing ${this.constructor.name} ${req.baseUrl}`)
+      })
   }
 
   prepareFieldForTranslation (fieldName) {
