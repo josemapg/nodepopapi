@@ -13,12 +13,18 @@
     "cleanDocs": "node scripts/cross-rm.js -rf docs",
     "cleanLogs": "node scripts/cross-rm.js -rf logs/* logs/.*audit*",
     "postinstall": "cd scripts && yarn install && cd -",
-    "production": "yarn audit && cross-env NODE_PATH=src NODE_ENV=prod node src/index.js",
     "reinstall": "node scripts/cross-rm.js -rf node_modules && yarn install && yarn audit",
     "start": "cross-env NODE_PATH=src nodemon src/index.js",
     "standard": "standard | snazzy",
     "standard-fix": "standard --fix | snazzy",
-    "jsdoc": "node scripts/cross-rm.js -rf docs && mkdir docs && jsdoc src -d docs"
+    "jsdoc": "node scripts/cross-rm.js -rf docs && mkdir docs && jsdoc src -d docs",
+    "startProductionCluster": "yarn audit && cross-env NODE_PATH=src NODE_ENV=prod pm2 start ecosystem.config.js",
+    "reloadProductionCluster": "yarn audit && cross-env NODE_PATH=src NODE_ENV=prod pm2 reload ecosystem.config.js",
+    "stopProductionCluster": "cross-env NODE_PATH=src NODE_ENV=prod pm2 stop NodepopAPI",
+    "monitorProductionCluster": "pm2 monit",
+    "logsProductionCluster": "pm2 logs",
+    "listProductionCluster": "pm2 list",
+    "deleteProductionCluster": "pm2 delete NodepopAPI"
   },
   "engines": {
     "node": ">=8"
@@ -56,6 +62,7 @@
     "eslint-plugin-node": "^8.0.0",
     "jsdoc": "^3.5.5",
     "nodemon": "^1.18.9",
+    "pm2": "^3.2.4",
     "shelljs": "^0.8.3",
     "standard": "^12.0.1"
   },

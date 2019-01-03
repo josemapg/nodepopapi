@@ -12,7 +12,7 @@ const config = {
     process.env.LOGGER_LEVEL || 'debug', // 'error'/0 , 'warn'/1 , 'info'/2, 'verbose'/3, 'debug'/4, 'silly'/5
   authTokens: {
     jwtSecret: process.env.JWT_SECRET || 'test',
-    jwtExpireIn: process.env.JWT_EXPIRE_IN || 60 // 8640000 - 100 days only for test purpose
+    jwtExpireIn: process.env.JWT_EXPIRE_IN || 60 // In seconds, 8640000 - 100 days only for test purpose
   },
   api: {
     prefixV1: '/api/v1',
