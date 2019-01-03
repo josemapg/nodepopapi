@@ -44,10 +44,18 @@ $ yarn install
 $ yarn start
 ```
 
-* Arrancar en modo producción (node)
+* Arrancar en modo producción en modo cluster
 ```bash
-$ yarn production
+$ yarn startProductionCluster
 ```
+para gestionar el cluster se han definido además los comandos siguientes como scripts:
+* `reloadProductionCluster`: Reinicio con 0-downtime
+* `stopProductionCluster`: Para cluster, por completo
+* `listProductionCluster`: Información reducida del cluster
+* `monitorProductionCluster`: Monitor información ampliada
+* `logsProductionCluster`: Visualización logs
+
+Por último, si se requiere cambiar alguna variable entorno utilizar el fichero `ecosystem.config.js` y rearrancar para tomar los cambios.
 
 Para dejar el directorio en el estado inicial de descargar utilizar el siguiente script:
 ```bash
